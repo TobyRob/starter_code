@@ -1,15 +1,15 @@
 #include <iostream>
 #include <mcpp/mcpp.h>
 int main(void){
-std::cout << "Hello World!" << std::endl;
 // Create a Minecraft connection
 mcpp::MinecraftConnection mc;
-// set the time to day in Minecraft
-mc.doCommand("time set day");
-//Change [x], [y], [z] to the coordinate you selected previously
-int build_x = 5;
-int build_y = -60;
-int build_z = 5;
+int build_x = 0;
+int build_y = 0;
+int build_z = 0;
+std::cout << "Enter the build coordinates [x y z]: " << std::endl;
+std::cin >> build_x;
+std::cin >> build_y;
+std::cin >> build_z;
 mcpp::Coordinate coord( build_x, build_y, build_z);
 mc.setBlock(coord, mcpp::Blocks::BRICKS);
 return EXIT_SUCCESS;
